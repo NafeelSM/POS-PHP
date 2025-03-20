@@ -90,11 +90,54 @@ function getAll($tableName, $status = NULL){
 function getById($tableName, $id){
 
     global $conn;
+
     $table = validate($tableName);
     $id = validate($id);
 
+    $query = "SELECT * FROM $table WHERE id='$id' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+
+    if($result){
+
+        if(mysqli_num_rows($result) == 1){
+            
+            $row = mysqli_fetch_assoc($result);
+            $response = [
+                'status' => 404,
+                'data' => $row,
+                'message' => 'Record Found'
+            ];
+            return $response;
+
+        }else{
+            $response = [
+                'status' => 404,
+                'message' => 'No Data Found'
+            ];
+            return $response;
+        }
+
+    }else{
+        $response = [
+            'status' => 500,
+            'message' => 'Somthing Went Wrong'
+        ];
+        return $response;
+    }
 }
 
+//Delete record
+function delete($tableName, $id){
+
+    global $conn;
+
+    $table = validate($tableName);
+    $id = validate($id);
+
+    $query = "DELETE FROM $table WHERE id='$id' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
 ?>
 
 
