@@ -30,6 +30,71 @@ function alertMessage() {
         unset($_SESSION['status']);
     }
 }
+
+
+//Insert record
+function insert($tableName, $data)
+{
+    global $conn;
+
+    $table = validate($tableName);
+
+    $columns = array_keys($data);
+    $values = array_values($data);
+
+    $finalColumn = implode(', ', $columns);
+    $finalValues = "'" . implode("', '", $values) . "'";
+
+    $query = "INSERT INTO $table ($finalColumn) VALUES ($finalValues)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+
+}
+
+//Update record
+function update($tableName, $id, $data){
+    global $conn;
+
+    $table = validate($tableName);
+    $id = validate($id);
+
+    $updateDataString = "";
+
+    foreach($data as $column => $value){
+        $updateDataString .= $column. '=' . "'$value',";
+    }
+
+    $finalUpdateData = substr(trim($updateDataString), 0,-1);
+
+    $query = "UPDATE $table SET $finalUpdateData WHERE id='$id'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+//Get all data
+function getAll($tableName, $status = NULL){
+
+    global $conn;
+
+    $table = validate($tableName);
+    $status = validate($status);
+
+    if($status == 'status')
+    {
+        $query = "SELECT * FROM $table";
+    }
+    return mysqli_query($conn, $query);
+}
+
+//Get each record
+function getById($tableName, $id){
+
+    global $conn;
+    $table = validate($tableName);
+    $id = validate($id);
+
+}
+
 ?>
 
 
