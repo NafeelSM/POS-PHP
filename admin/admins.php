@@ -7,6 +7,7 @@
                 <a href="admins-create.php" class="btn btn-primary float-end">Add Admin</a>
             </div>
             <div class="card-body">
+            <?php   alertMessage(); ?>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered">
                         <thead>
