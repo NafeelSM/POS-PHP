@@ -81,6 +81,10 @@ function getAll($tableName, $status = NULL){
 
     if($status == 'status')
     {
+        $query = "SELECT * FROM $table WHERE status='0'";
+    }
+    else
+    {
         $query = "SELECT * FROM $table";
     }
     return mysqli_query($conn, $query);
