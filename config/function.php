@@ -107,7 +107,7 @@ function getById($tableName, $id){
             
             $row = mysqli_fetch_assoc($result);
             $response = [
-                'status' => 404,
+                'status' => 200,
                 'data' => $row,
                 'message' => 'Record Found'
             ];
