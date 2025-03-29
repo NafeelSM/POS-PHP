@@ -4,7 +4,7 @@
         <div class="card shadow-sm">
             <div class="card-header">
                 <h4 class="mb-0">Add Admin</h4>
-                <a href="admin.php" class="btn btn-primary float-end">Back</a>
+                <a href="admins.php" class="btn btn-primary float-end">Back</a>
             </div>
             <div class="card-body">
                 <?php   alertMessage(); ?>
