@@ -57,12 +57,10 @@
                             </div>
                             <div class="col-md-12 mb-3 text-end">
 
-                                <button type="submit" name="updateAdmin" class="btn btn-primary">Update</button>
+                                <button href="admins.php"button type="submit" name="updateAdmin" class="btn btn-primary">Update</button>
                             </div>
                         </div>
-
                         <?php
-
 
                     } else {
                         echo '<h5>' . $adminData['message'] . '</h5>';
