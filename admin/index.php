@@ -23,7 +23,7 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
+    </div>
 
 
         <?php include('includes/footer.php'); ?>
