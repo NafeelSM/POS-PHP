@@ -3,7 +3,7 @@
 
     <div class="py-5 bg-light">
         <div class="container mt-5">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="card shadow rounded-4">
                         <div class="p-5">
@@ -19,7 +19,7 @@
                                     <label type="text">Password</label>
                                     <input type="password" name="password" class="form-control" required />
                                 </div>
-                                
+
                                 <div class="my-3">
                                     <button type="submit" name="loginBtn" class="btn btn-primary w-100 mt-2">
                                         Sign In
