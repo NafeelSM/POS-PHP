@@ -159,4 +159,3 @@ function checkParamId($type){
 ?>
 
 
-?>
