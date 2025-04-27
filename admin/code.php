@@ -109,6 +109,28 @@ if(isset($_POST['saveCategory']))
     }
 }
 
+if(isset(($_POST['updateCategory'])))
+{
+    $categoryId = validate($_POST['categoryId']);
+
+    $name = validate($_POST['name']);
+    $description = validate($_POST['description']);
+    $status = isset($_POST['status']) == true ? 1:0;
+
+    $data = [
+        'name' => $name,
+        'description' => $description,
+        'status' => $status,
+        
+    ];
+    $result = update('categories',$categoryId, $data);
+
+    if($result){
+        redirect('categories-edit.php?id='.$categoryId, 'Update Success!');
+    }else{
+        redirect('categories-edit.php?id='.$categoryId, 'Somthing Wants Wrong!');
+    }
+}
 
 ?>
 
