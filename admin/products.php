@@ -33,7 +33,7 @@
                                 <tr>
                                     <td><?= $item['id'] ?></td>
                                     <td>
-                                        <img src="../ <?= $item['image'];?>"  style="width:50px, height:50px"; alt="Img">
+                                        <img src="../<?= $item['image']; ?>"  style="width:50px;height:50px" alt="Img">
                                     </td>
                                     <td><?= $item['name'] ?></td>
                                     <td>
